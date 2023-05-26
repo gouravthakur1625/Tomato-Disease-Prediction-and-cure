@@ -1,3 +1,4 @@
+gunicorn
 Flask
 Keras-Preprocessing
 matplotlib==3.4.0
