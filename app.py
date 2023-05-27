@@ -8,6 +8,16 @@ from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 from logging import FileHandler,WARNING
+import subprocess
+
+def install_requirements():
+    try:
+        subprocess.check_call(['pip', 'install', '-r', 'requirements.txt'])
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to install requirements. Error: {e}")
+
+# Call the install_requirements function
+install_requirements()
 
 filepath = 'E:/Projects/Leaf Disease Prediction2/model.h5'
 model = load_model(filepath)
